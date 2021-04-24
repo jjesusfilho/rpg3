@@ -1,13 +1,15 @@
 library(stf)
 
 
-stf_download_information("2635061", dir = "data-raw/informacoes")
+incidentes <- 2635061:2635161
 
-stf_download_parties("2635061","data-raw/partes")
+#stf_download_information(incidentes, dir = "data-raw/informacoes")
 
-stf_download_details("2635061","data-raw/detalhes")
+#stf_download_parties(incidentes,"data-raw/partes")
 
-stf_download_sheet("2635061", "data-raw/movimentacao")
+stf_download_details(incidentes,"data-raw/detalhes")
+
+stf_download_sheet(incidentes, "data-raw/movimentacao")
 
 
 informacoes <- read_stf_information(path = "data-raw/informacoes")
